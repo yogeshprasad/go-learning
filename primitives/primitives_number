@@ -1,0 +1,65 @@
+// You can edit this code!
+// Click here and start typing.
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	var n bool = true
+	fmt.Printf("%v, %T \n", n, n)
+
+	m := 1 == 2
+	o := 1 == 1
+	fmt.Printf("%v, %v \n", m, o)
+
+	var k bool // all uninitialized variables are being initialized with 0 and 0 bool is false
+	fmt.Printf("%v, %T \n", k, k)
+
+	var si int16 = -16
+	var usi uint16 = 16
+	fmt.Printf("%v, %T \n", si, si)
+	fmt.Printf("%v, %T \n", usi, usi)
+
+	// airthmetic operation
+	fmt.Println(10 + 3)
+	fmt.Println(10 - 3)
+	fmt.Println(10 * 3)
+	fmt.Println(10 / 3)
+	fmt.Println(10 % 3)
+
+	// fmt.Println(si + usi) ERROR: mismatched types int16 and uint16
+	fmt.Println(si + int16(usi))
+
+	b1 := 10 // 1010
+	b2 := 3  // 0011
+
+	// bit operations
+	fmt.Println(b1 & b2)  // 0010 = 2
+	fmt.Println(b1 | b2)  // 1011 = 11
+	fmt.Println(b1 ^ b2)  // 1001 = 9
+	fmt.Println(b1 &^ b2) // 0100 = 8
+
+	bs := 8              // 2^3
+	fmt.Println(bs << 3) // Left shift 2^3 * 2^3 = 64
+	fmt.Println(bs >> 3) // Right shift 2^3 / 2^3 = 1
+
+	// float float32 float64
+
+	f1 := 3.14
+	f1 = 13.7e72
+	f1 = 2.1e14
+	fmt.Println("%v, %T", f1, f1)
+
+	// Complex number
+	var c complex64 = 1 + 2i
+	fmt.Printf("%v, %T \n", c, c)
+	fmt.Printf("%v, %T \n", real(c), real(c))
+	fmt.Printf("%v, %T \n", imag(c), imag(c))
+
+	// Create complex number
+
+	c = complex(5, 12)
+	fmt.Printf("%v, %T \n", c, c)
+}
