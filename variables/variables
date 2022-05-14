@@ -1,0 +1,62 @@
+// You can edit this code!
+// Click here and start typing.
+package main
+
+import (
+	"fmt"
+	"strconv"
+)
+
+// pkg level variables
+//var str1 string = "this is str1"
+//var int1 int = 12
+//var float1 float64 = 12.8
+
+// Variable with pkg scope
+var (
+	str1   string  = "this is str1"
+	int1   int     = 12
+	float1 float64 = 12.8
+)
+
+var (
+	counter int = 0
+)
+
+// Variable with global scope (UPPER CASE)
+var M int = 100
+
+// k := 200 Error non-declaration statement outside function body
+func main() {
+	// Variable with block scope
+	i := 10
+	var j int = 20
+	var k int
+	k = 30
+	//l := 50 Error: Declared and not used
+	fmt.Printf("%v, %v, %v, %v, %v, %v %v %T \n", str1, int1, float1, i, j, k, counter, i)
+
+	counter = 1 // override value
+	fmt.Println(counter)
+	fmt.Println(M)
+
+	var theURL string = "https://wavfront.com"            // Use acronym in UPPER CASE
+	var theHTTPRequest string = "https://wavfront.com/v1" // Use acronym in UPPER CASE
+	fmt.Println(theURL, theHTTPRequest)
+
+	//===========TYPE CASTING=============
+	o := 10
+	fmt.Printf("%v, %T \n", o, o)
+	var f float32
+	f = float32(o)
+	fmt.Printf("%v, %T \n", f, f)
+
+	f = 12.90
+	o = int(f) // we will miss .90
+	fmt.Printf("%v, %T \n", o, o)
+
+	var mystr string
+	// mystr = string(o) this will not work
+	mystr = strconv.Itoa(o)
+	fmt.Printf("%v, %T \n", mystr, mystr)
+}
