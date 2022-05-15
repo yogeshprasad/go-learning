@@ -1,0 +1,33 @@
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	//statePopulation := make(map[string]int)
+	statePopulation := map[string]int{
+		"California":   340000,
+		"Texas":        343434343,
+		"Florida":      2323223223,
+		"New York":     34334344345,
+		"Pennsylvania": 2243554545,
+		"Illinois":     334343489,
+		"Ohio":         232443,
+	}
+
+	fmt.Println(statePopulation)
+	fmt.Println(statePopulation["Ohio"])
+	statePopulation["Georgia"] = 12343433
+	fmt.Println(statePopulation)
+	delete(statePopulation, "Georgia")
+	fmt.Println(statePopulation)
+	fmt.Println(statePopulation["Georgia"]) // We have removed it still get 0
+	pop, ok := statePopulation["Georgia"]
+	fmt.Println(pop, ok)
+	fmt.Println(len(statePopulation))
+	sp := statePopulation
+	delete(sp, "Ohio")
+	fmt.Println(statePopulation) // Ohio got removed from original map also
+
+}
