@@ -1,0 +1,47 @@
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	grade := []int{98, 78, 86}
+	fmt.Printf("Grades: %v\n", grade)
+	fmt.Printf("Length: %v Capacity: %v \n", len(grade), cap(grade))
+
+	grade1 := grade
+	grade1[1] = 99 // it by default refers to the original array
+	fmt.Printf("Grades: %v\n", grade)
+
+	a := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
+	fmt.Printf("All Elements: %v\n", a[:])
+	fmt.Printf("First 3 Elements: %v\n", a[:3])
+	fmt.Printf("Last 3 Elements: %v\n", a[9:])
+	fmt.Printf("From 6 to 9 Elements: %v", a[5:9])
+
+	b := make([]int, 3)
+	fmt.Println(b)
+	fmt.Printf("Length: %v Capacity: %v \n", len(b), cap(b))
+
+	c := make([]int, 3, 100)
+	fmt.Println(b)
+	fmt.Printf("Length: %v Capacity: %v \n", len(c), cap(c))
+
+	// when we start filling the data and when we reach to limit it creates
+	// new array with double size and copy the data this makes expensive operation when we have big size
+	// that's why make function is used
+
+	d := []int{}
+	d = append(d, 1)
+	d = append(d, 2, 3, 4, 5)
+	d = append(d, []int{6, 7, 8, 9}...)
+	fmt.Println(d)
+	fmt.Printf("Length: %v Capacity: %v \n", len(d), cap(d))
+
+	// Remove first element
+	fmt.Println(d[1:])
+	// Remove last element
+	fmt.Println(d[:len(d)-1])
+	fmt.Println(append(d[:4], d[5:]...))
+
+}
