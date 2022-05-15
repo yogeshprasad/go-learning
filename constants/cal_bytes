@@ -1,0 +1,26 @@
+// You can edit this code!
+// Click here and start typing.
+package main
+
+import (
+	"fmt"
+)
+
+// IOTA Starts from 0
+const (
+	_  = iota // throw first value by assigning to blank identifier
+	KB = 1 << (10 * iota)
+	MB
+	GB
+	TB
+	PB
+	EB
+	ZB
+	YB
+)
+
+func main() {
+	fileSize := 4000000000.
+	fmt.Printf("%.2f GB\n", fileSize/GB)
+
+}
