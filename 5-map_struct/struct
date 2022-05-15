@@ -1,0 +1,33 @@
+package main
+
+import (
+	"fmt"
+)
+
+type Doctor struct {
+	number     int
+	actorName  string
+	companions []string
+}
+
+func main() {
+	aDoctor := Doctor{
+		number:     3,
+		actorName:  "Jon Smith",
+		companions: []string{"Liao", "Htrop", "Jhonkrd"},
+	}
+	// can be initialized, but not a good way
+	bDoctor := Doctor{
+		3,
+		"Jon Smith",
+		[]string{"Liao", "Htrop", "Jhonkrd"},
+	}
+
+	fmt.Println(aDoctor)
+	fmt.Println(bDoctor)
+	fmt.Println(aDoctor.actorName)
+
+	cDoctor := struct{ name string }{name: "Smith"}
+	fmt.Println(cDoctor)
+
+}
