@@ -1,0 +1,29 @@
+// You can edit this code!
+// Click here and start typing.
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	must := "This is first str"
+	fmt.Printf("%v\n", must)
+	//fmt.Printf("%v\n", must[2]) This will print number as string is stored as bytes
+	fmt.Printf("%v, %T\n", string(must[2]), must[2])
+
+	// must[2] = "u" This will fail as you can not assign string to byte conversion required
+
+	s1 := "First "
+	s2 := "Second"
+	fmt.Println(s1 + s2)
+	// string to bytes array
+	b := []byte(s1)
+	fmt.Printf("%v, %T \n", b, b)
+
+	// int32 type string
+
+	var r rune = 'a'
+	fmt.Printf("%v, %T", r, r)
+
+}
