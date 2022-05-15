@@ -1,0 +1,28 @@
+// You can edit this code!
+// Click here and start typing.
+package main
+
+import (
+	"fmt"
+)
+
+// IOTA Starts from 0
+const (
+	isAdmin = 1 << iota
+	isHeadquarters
+	canSeeFinancials
+
+	canSeeAfrica
+	canSeeAsia
+	canSeeEurope
+	canSeeNorthAmerica
+	canSeeSouthAmerica
+)
+
+func main() {
+	var roles byte = isAdmin | canSeeFinancials | canSeeEurope
+	fmt.Printf("%b\n", roles)
+	fmt.Printf("isAdmin in roles? %v\n", isAdmin&roles == isAdmin)
+	fmt.Printf("canSeeFinancials in roles? %v", canSeeFinancials&roles == canSeeFinancials)
+
+}
