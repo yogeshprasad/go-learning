@@ -1,0 +1,35 @@
+// You can edit this code!
+// Click here and start typing.
+package main
+
+import (
+	"fmt"
+)
+
+// IOTA Starts from 0
+const (
+	a = iota
+	b = iota
+	c // this will also get replaced like first two statements
+)
+
+// IOTA Starts from 0
+const (
+	_  = iota // throw away 0 value
+	a1 = iota
+	b1 // this will also get replaced like first two statements
+)
+
+func main() {
+	const myConst int = 42 // with type
+	const myConst2 = 2 * 6 // without type
+	// const myConst3 = math.Sin(1.57) Error: not allowed as it has to calculate at run time
+	// myConst = 34 Error Not allowed
+	fmt.Printf("%v, %T\n", myConst, myConst)
+	fmt.Printf("%v, %T\n", myConst2, myConst2)
+
+	// IOTA
+	fmt.Printf("%v, %v, %v \n", a, b, c)
+	fmt.Printf("%v, %v \n", a1, b1)
+
+}
