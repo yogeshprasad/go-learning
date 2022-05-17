@@ -1,0 +1,23 @@
+package main
+
+import "fmt"
+
+func main() {
+	grade := 85
+	if grade > 80 {
+		fmt.Println("First Division A++")
+	} else if grade > 70 {
+		fmt.Println("First Division A+")
+	} else {
+		fmt.Println("Your resume may not get selected")
+	}
+
+	myMap := map[string]int{"a": 1, "b": 2, "c": 3, "d": 4}
+	if pop, ok := myMap["f"]; ok {
+		fmt.Println(pop)
+	} else {
+		fmt.Println("Key not found")
+	}
+	
+	// it supports[<, >, ==, !=, ||, &&, !]
+}
